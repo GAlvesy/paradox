@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b7424oxe3m186"]
+
+[ext_resource type="Script" uid="uid://c40vmyxsnj3a1" path="res://scripts/checkpoint.gd" id="1_jmy7n"]
+[ext_resource type="Texture2D" uid="uid://cum6i2rg7xe84" path="res://scenes/banco.png" id="2_els25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15q6o"]
+size = Vector2(23, 16)
+
+[node name="Checkpoint" type="Area2D" unique_id=28900762]
+script = ExtResource("1_jmy7n")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058628581]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_15q6o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717471762]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_els25")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

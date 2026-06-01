@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://buakjgnvl22gf"]
+
+[ext_resource type="Texture2D" uid="uid://ds3asi1iha2ba" path="res://sprites/WhatsApp Image 2026-05-31 at 21.31.49 (1).jpeg" id="1_n4g2v"]
+
+[sub_resource type="Animation" id="Animation_3mj2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vbcv6"]
+resource_name = "mostrar_logo"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2ut7"]
+_data = {
+&"RESET": SubResource("Animation_3mj2l"),
+&"mostrar_logo": SubResource("Animation_vbcv6")
+}
+
+[node name="SplashScreen" type="Control" unique_id=2093746574]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1743244251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1241965894]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -836.0
+offset_top = -470.5
+offset_right = 836.0
+offset_bottom = 470.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n4g2v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=444620751]
+libraries/ = SubResource("AnimationLibrary_a2ut7")

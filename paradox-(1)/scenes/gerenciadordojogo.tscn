@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://1d0p2dbh1c2n"]
+
+[node name="Gerenciadordojogo" type="Node2D" unique_id=16595259]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1562842355]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=2049219326]
+layout_mode = 2

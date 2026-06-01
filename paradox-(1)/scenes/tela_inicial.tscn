@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bbf2h454cp7te"]
+
+[ext_resource type="Script" uid="uid://dhixt7a0emvau" path="res://scripts/tela_inicial.gd" id="1_xo13d"]
+[ext_resource type="Texture2D" uid="uid://cv1s210fqvnku" path="res://sprites/WhatsApp Image 2026-05-31 at 21.31.49.jpeg" id="2_2o6u0"]
+[ext_resource type="AudioStream" uid="uid://ij2m6sg74ste" path="res://soundtrack/27 - Blasted Steps.mp3" id="3_2o6u0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2o6u0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvj2l"]
+
+[node name="Control" type="Control" unique_id=815103408]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xo13d")
+metadata/_edit_use_anchors_ = true
+
+[node name="FundoJogo" type="TextureRect" parent="." unique_id=2029103079]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2o6u0")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=413586713]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.85200006
+anchor_right = 0.50600004
+anchor_bottom = 0.85200006
+offset_left = -19.912048
+offset_top = -20.096008
+offset_right = 20.087952
+offset_bottom = 19.903992
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BotaoJogar" type="Button" parent="VBoxContainer" unique_id=290808399]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2o6u0")
+text = "JOGAR"
+
+[node name="BotaoSair" type="Button" parent="VBoxContainer" unique_id=61696139]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hvj2l")
+text = "SAIR"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=388097607]
+position = Vector2(657, 320)
+stream = ExtResource("3_2o6u0")
+volume_db = -5.821
+pitch_scale = 1.07
+autoplay = true
+parameters/looping = true

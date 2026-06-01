@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bghkfcx21yp2x"]
+
+[ext_resource type="Script" uid="uid://b1owfr5x4glyc" path="res://scripts/camera_2d.gd" id="1_jjn87"]
+
+[node name="Camera2D" type="Camera2D" unique_id=2007846379 node_paths=PackedStringArray("jogador_1", "jogador_2")]
+script = ExtResource("1_jjn87")
+jogador_1 = NodePath("")
+jogador_2 = NodePath("")
+zoom_perto = Vector2(2, 2)
+zoom_longe = Vector2(1, 1)
+distancia_maxima_para_zoom = 200.0

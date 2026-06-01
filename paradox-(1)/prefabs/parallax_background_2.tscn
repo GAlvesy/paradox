@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dt28hfd6sx14u"]
+
+[ext_resource type="Texture2D" uid="uid://dwkit3dkelby1" path="res://sprites/backaend'.png" id="1_jowgh"]
+[ext_resource type="Texture2D" uid="uid://blvli2mha78oh" path="res://scenes/moon-Photoroom.png" id="2_bn0o7"]
+[ext_resource type="Texture2D" uid="uid://bhuo75p7g8eu7" path="res://scenes/montain-Photoroom.png" id="3_phm82"]
+[ext_resource type="Texture2D" uid="uid://c6veu8verjugn" path="res://sprites/Multi_Platformer_Tileset_Original/GrassLand/Details/GrassLand_Grass_4.png" id="4_xvvy3"]
+[ext_resource type="Texture2D" uid="uid://cf2s3nflhmvt4" path="res://scenes/nuvens-Photoroom.png" id="5_d5wal"]
+[ext_resource type="Texture2D" uid="uid://djg77wrseb2pp" path="res://sprites/whater.png" id="6_8jrjp"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p6uka"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1200, 350, 1)
+angle_min = -3.0999894
+angle_max = 77.30001
+velocity_pivot = Vector3(1000, 250, 0)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 8.0
+angular_velocity_min = -5.000016
+angular_velocity_max = 4.999984
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 6.0
+color = Color(0.6666667, 0.72156864, 1, 1)
+turbulence_enabled = true
+turbulence_noise_strength = 2.0
+turbulence_noise_scale = 4.0
+turbulence_noise_speed_random = 0.25
+
+[node name="ParallaxBackground2" type="ParallaxBackground" unique_id=1863722467]
+scroll_ignore_camera_zoom = true
+
+[node name="ceu" type="ParallaxLayer" parent="." unique_id=1740535244]
+position = Vector2(502, 113)
+motion_scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ceu" unique_id=2060196893]
+modulate = Color(0.03137255, 0.07450981, 0.14901961, 1)
+position = Vector2(561.0001, -792.2324)
+scale = Vector2(2.6143615, 4.5948596)
+texture = ExtResource("1_jowgh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ceu" unique_id=692969581]
+modulate = Color(0.03137255, 0.07450981, 0.14901961, 1)
+position = Vector2(561.0001, -792.2324)
+scale = Vector2(2.6143615, 4.5948596)
+texture = ExtResource("1_jowgh")
+
+[node name="Moon" type="ParallaxLayer" parent="." unique_id=1046379590]
+modulate = Color(0.68235296, 0.827451, 1, 1)
+position = Vector2(1406, -1143)
+scale = Vector2(1.2, 1.2)
+motion_scale = Vector2(0.5, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Moon" unique_id=2124016345]
+modulate = Color(0.68235296, 0.8117647, 1, 1)
+position = Vector2(1.000061, 7.6293945e-06)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bn0o7")
+
+[node name="Mountains" type="ParallaxLayer" parent="." unique_id=162338689]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(44, -752)
+motion_scale = Vector2(0.15, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains" unique_id=1560137094]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(687, 636)
+texture = ExtResource("3_phm82")
+
+[node name="GrassLandGrass4" type="Sprite2D" parent="Mountains" unique_id=1828360618]
+position = Vector2(913, 667)
+texture = ExtResource("4_xvvy3")
+
+[node name="GrassLandGrass5" type="Sprite2D" parent="Mountains" unique_id=644245948]
+position = Vector2(851, 668)
+texture = ExtResource("4_xvvy3")
+
+[node name="Cloud" type="ParallaxLayer" parent="." unique_id=967338990]
+position = Vector2(715, 423)
+motion_scale = Vector2(0.8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cloud" unique_id=409994322]
+modulate = Color(1, 1, 1, 0.5921569)
+position = Vector2(739, -1600)
+scale = Vector2(2.067579, 2)
+texture = ExtResource("5_d5wal")
+
+[node name="Cloud2" type="ParallaxLayer" parent="." unique_id=537500055]
+position = Vector2(3193, -450)
+motion_scale = Vector2(0.8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cloud2" unique_id=2003561818]
+modulate = Color(1, 1, 1, 0.5921569)
+position = Vector2(624, -737)
+scale = Vector2(2, 2)
+texture = ExtResource("5_d5wal")
+
+[node name="Cloud3" type="ParallaxLayer" parent="." unique_id=929081953]
+position = Vector2(-1634, 447)
+motion_scale = Vector2(0.8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cloud3" unique_id=1145960532]
+modulate = Color(1, 1, 1, 0.5921569)
+position = Vector2(727, -1608)
+scale = Vector2(2, 2)
+texture = ExtResource("5_d5wal")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1431006214]
+position = Vector2(1203, 352)
+amount = 80
+lifetime = 10.0
+randomness = 0.07
+process_material = SubResource("ParticleProcessMaterial_p6uka")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=805069823]
+position = Vector2(403, 19)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=858812792]
+position = Vector2(4277.249, 515.52515)
+scale = Vector2(12.280394, 8.305781)
+texture = ExtResource("6_8jrjp")

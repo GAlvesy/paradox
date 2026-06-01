@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dv57jsihwisdv"]
+
+[ext_resource type="Script" uid="uid://dlactflh10e3p" path="res://scripts/enemymage.gd" id="1_fnxmm"]
+[ext_resource type="Texture2D" uid="uid://caotwo62lytaq" path="res://sprites/qQWXxh-ezgif.com-gif-to-sprite-converter-Photoroom_2.png" id="2_23tr2"]
+[ext_resource type="Texture2D" uid="uid://c620oadeqnhps" path="res://sprites/hitbruxa.png" id="2_87il1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27myw"]
+atlas = ExtResource("2_87il1")
+region = Rect2(0, 0, 303, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87il1"]
+atlas = ExtResource("2_23tr2")
+region = Rect2(0, 0, 379, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3m48"]
+atlas = ExtResource("2_23tr2")
+region = Rect2(379, 0, 379, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldqk4"]
+atlas = ExtResource("2_23tr2")
+region = Rect2(758, 0, 379, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe3ta"]
+atlas = ExtResource("2_23tr2")
+region = Rect2(1137, 0, 379, 266)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eknwa"]
+atlas = ExtResource("2_23tr2")
+region = Rect2(1516, 0, 379, 266)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg815"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27myw")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87il1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3m48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldqk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe3ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eknwa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 16.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dky7p"]
+radius = 14.0
+height = 62.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87il1"]
+radius = 12.0
+height = 58.0
+
+[sub_resource type="Gradient" id="Gradient_343v7"]
+offsets = PackedFloat32Array(0.38221154, 0.50721157, 0.72836536, 1)
+colors = PackedColorArray(0.7668269, 0.7668269, 0.7668269, 1, 0, 0, 0, 1, 0.8878049, 0.8878049, 0.8878049, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5w3qb"]
+gradient = SubResource("Gradient_343v7")
+fill_from = Vector2(0.5086806, 0.043402776)
+fill_to = Vector2(0.9670139, 0.078125)
+
+[node name="Enemymage" type="CharacterBody2D" unique_id=1563269654]
+collision_layer = 4
+script = ExtResource("1_fnxmm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1915606734]
+position = Vector2(-3, -16)
+scale = Vector2(0.41026828, 0.3398144)
+sprite_frames = SubResource("SpriteFrames_vg815")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1938881808]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_dky7p")
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=1210190386]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="TeleportCooldown" type="Timer" parent="." unique_id=1822763162]
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=669313092]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1809320731]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_87il1")
+debug_color = Color(0.821985, 0.36224815, 0.4632622, 0.41960785)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=378586780]
+texture = SubResource("GradientTexture2D_5w3qb")
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

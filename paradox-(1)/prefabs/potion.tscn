@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ci1v0octwd5i"]
+
+[ext_resource type="PackedScene" uid="uid://bgg8k75cadebj" path="res://prefabs/azul.tscn" id="1_i36h5"]
+[ext_resource type="PackedScene" uid="uid://c3sr226cy8pil" path="res://prefabs/vermelho.tscn" id="2_kb8ke"]
+[ext_resource type="PackedScene" uid="uid://crm3v365ihw35" path="res://prefabs/rosa.tscn" id="3_8bgua"]
+[ext_resource type="PackedScene" uid="uid://b2p87mgo10rew" path="res://prefabs/verde.tscn" id="4_2m04f"]
+
+[node name="Potions" type="Node2D" unique_id=1593801307]
+
+[node name="Azul" parent="." unique_id=1124538418 instance=ExtResource("1_i36h5")]
+
+[node name="Vermelho" parent="." unique_id=998043620 instance=ExtResource("2_kb8ke")]
+position = Vector2(73, 0)
+
+[node name="Rosa" parent="." unique_id=1861205513 instance=ExtResource("3_8bgua")]
+position = Vector2(49, 1)
+
+[node name="Verde" parent="." unique_id=1766745185 instance=ExtResource("4_2m04f")]
+position = Vector2(25, 1)

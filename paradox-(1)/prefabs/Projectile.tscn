@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://badfe0uwomr5l"]
+
+[ext_resource type="Script" uid="uid://citodyq5c4y5a" path="res://scripts/projectile.gd" id="1_vihyi"]
+[ext_resource type="Texture2D" uid="uid://byrikue24753x" path="res://sprites/download2-ezgif.com-png-to-jpg-converter-Photoroom_1.png" id="2_vihyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6q2a6"]
+radius = 7.071068
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdm4f"]
+atlas = ExtResource("2_vihyi")
+region = Rect2(0, 266, 244, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13obt"]
+atlas = ExtResource("2_vihyi")
+region = Rect2(244, 266, 244, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du7tx"]
+atlas = ExtResource("2_vihyi")
+region = Rect2(488, 266, 244, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjnh8"]
+atlas = ExtResource("2_vihyi")
+region = Rect2(732, 266, 244, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjfis"]
+atlas = ExtResource("2_vihyi")
+region = Rect2(976, 266, 244, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7ljl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdm4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13obt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du7tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjnh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjfis")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Projectile" type="Area2D" unique_id=1121254512]
+script = ExtResource("1_vihyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=34797805]
+shape = SubResource("CircleShape2D_6q2a6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1424462343]
+position = Vector2(10.999998, 8)
+scale = Vector2(0.13319673, 0.22744362)
+sprite_frames = SubResource("SpriteFrames_a7ljl")
+frame_progress = 0.29951543
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=477482084]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

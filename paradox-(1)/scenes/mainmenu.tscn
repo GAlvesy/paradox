@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dogavvakjj4rl"]
+
+[ext_resource type="Script" uid="uid://b055v1qfp0e52" path="res://scripts/mainmenu.gd" id="1_5mbse"]
+[ext_resource type="AudioStream" uid="uid://jr333lxkwcbh" path="res://soundtrack/Christopher_Larkin_-_Silksong_(mp3.pm).mp3" id="2_natt5"]
+[ext_resource type="Texture2D" uid="uid://4h356pj0yl17" path="res://sprites/header.jpg" id="2_r3g3c"]
+[ext_resource type="Script" uid="uid://b7sttcwalayg4" path="res://scripts/texture_rect.gd" id="3_3vvtq"]
+
+[node name="Mainmenu" type="Control" unique_id=967632334]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5mbse")
+
+[node name="Label" type="Label" parent="." unique_id=306460347]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PARADOX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Label" unique_id=447915671]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 0
+offset_left = -5.0
+offset_right = 1282.0
+offset_bottom = 721.0
+texture = ExtResource("2_r3g3c")
+script = ExtResource("3_3vvtq")
+
+[node name="Start" type="Button" parent="." unique_id=289099430]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 213.0
+offset_right = 615.0
+offset_bottom = 244.0
+text = "start"
+
+[node name="Quit" type="Button" parent="." unique_id=1659099704]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 268.0
+offset_right = 611.0
+offset_bottom = 299.0
+text = "quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1350273488]
+stream = ExtResource("2_natt5")
+autoplay = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

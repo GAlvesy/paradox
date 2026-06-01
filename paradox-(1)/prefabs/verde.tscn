@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b2p87mgo10rew"]
+
+[ext_resource type="Script" uid="uid://uumyp607srv4" path="res://scripts/verde.gd" id="1_ai3gw"]
+[ext_resource type="Texture2D" uid="uid://pscrtutdbys2" path="res://sprites/verde-Photoroom.png" id="2_863pk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rpgti"]
+radius = 5.0
+height = 16.0
+
+[node name="Verde" type="Area2D" unique_id=1766745185]
+script = ExtResource("1_ai3gw")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=785727537]
+shape = SubResource("CapsuleShape2D_rpgti")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1304182669]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_863pk")

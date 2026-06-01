@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ccf75172ccbu3"]
+
+[ext_resource type="Script" uid="uid://62oym23t2s8" path="res://scripts/area_2d.gd" id="1_b382d"]
+[ext_resource type="PackedScene" uid="uid://2fqer1as53v3" path="res://scenes/fase-1-pt2.tscn" id="2_m74jq"]
+[ext_resource type="Texture2D" uid="uid://dk2ea0e0hb523" path="res://sprites/6nR7sR-Photoroom.png" id="3_5nc0k"]
+[ext_resource type="Texture2D" uid="uid://ce5drb0kbgbu2" path="res://sprites/gothic-pixel-cathedral-stockcake-Photoroom.png" id="4_btddp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31c68"]
+size = Vector2(138, 87)
+
+[node name="tp" type="Area2D" unique_id=1661392031]
+collision_mask = 5
+script = ExtResource("1_b382d")
+next_level = ExtResource("2_m74jq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110885643]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(-14, 33.5)
+shape = SubResource("RectangleShape2D_31c68")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=450745683]
+position = Vector2(-206, 75)
+texture = ExtResource("3_5nc0k")
+
+[node name="StockCakeCatedralGóticaEmPixel1593112SmallPhotoroom" type="Sprite2D" parent="." unique_id=276464277]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(-13, 55)
+texture = ExtResource("4_btddp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

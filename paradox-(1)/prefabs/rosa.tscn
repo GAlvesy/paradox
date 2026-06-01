@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crm3v365ihw35"]
+
+[ext_resource type="Script" uid="uid://c44nor87xes2h" path="res://scripts/rosa.gd" id="1_yc1t8"]
+[ext_resource type="Texture2D" uid="uid://4rjxt0744022" path="res://sprites/rosa-Photoroom.png" id="2_2s43p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_20wfl"]
+radius = 3.0
+height = 18.0
+
+[node name="Rosa" type="Area2D" unique_id=1861205513]
+script = ExtResource("1_yc1t8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=614871965]
+shape = SubResource("CapsuleShape2D_20wfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=748774154]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_2s43p")

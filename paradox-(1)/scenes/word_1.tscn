@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://gwtqke7e0v70"]
+
+[ext_resource type="PackedScene" uid="uid://b8r2x8tmmx5ei" path="res://prefabs/player.tscn" id="1_nk8ls"]
+[ext_resource type="PackedScene" uid="uid://b3ojjvwa237nj" path="res://prefabs/enemy.tscn" id="4_x73s4"]
+[ext_resource type="PackedScene" uid="uid://dv57jsihwisdv" path="res://prefabs/enemymage.tscn" id="5_6awir"]
+
+[node name="word1" type="Node2D" unique_id=1791971346]
+
+[node name="TileMapLayer" parent="." unique_id=1892518366]
+
+[node name="Player1" parent="." unique_id=1677457183 instance=ExtResource("1_nk8ls")]
+position = Vector2(212, -25)
+
+[node name="Enemy2" parent="." unique_id=629602063 instance=ExtResource("4_x73s4")]
+position = Vector2(434, -52)
+
+[node name="Enemymage" parent="." unique_id=1563269654 instance=ExtResource("5_6awir")]
+position = Vector2(560, -91)
